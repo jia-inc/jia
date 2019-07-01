@@ -6,4 +6,6 @@
 
 @Amor 43.86%
 
-@Nocti(船新腊鸡) 10%
+@Nocti 10%
+
+@yetone 46.14%
