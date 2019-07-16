@@ -14,4 +14,6 @@
 
 [Jia.sexy v0.1](http://jia.sexy/v0.1.html)
 
-[Jia.sexy v0.2](http://jia.sexy)
+[Jia.sexy v0.2](http://jia.sexy/v0.2.html)
+
+[Jia.sexy v0.3](http://jia.sexy/index.html)
