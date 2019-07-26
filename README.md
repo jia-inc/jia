@@ -18,4 +18,4 @@
 
 [Jia.sexy v0.3 - Gaa Everywhere](http://jia.sexy/v0.3.html)
 
-[Jia.sexy v0.4 - Rain Gaa & Jia](http://jia.sexy/index.html)
+[Jia.sexy v0.4 - Rain Gaa & Jia](http://jia.sexy/index.html?v=0.4)
