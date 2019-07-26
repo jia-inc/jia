@@ -12,8 +12,10 @@
 
 ## 嘉园迭代
 
-[Jia.sexy v0.1](http://jia.sexy/v0.1.html)
+[Jia.sexy v0.1 - Everything can be jiarified](http://jia.sexy/v0.1.html)
 
-[Jia.sexy v0.2](http://jia.sexy/v0.2.html)
+[Jia.sexy v0.2 - Gaa system](http://jia.sexy/v0.2.html)
 
-[Jia.sexy v0.3](http://jia.sexy/index.html)
+[Jia.sexy v0.3 - Gaa Everywhere](http://jia.sexy/v0.3.html)
+
+[Jia.sexy v0.4 - Rain Gaa & Jia](http://jia.sexy/index.html)
