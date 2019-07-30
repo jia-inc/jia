@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Rain Gaa & Jia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<style>
+html,body{height:100%;width:100%;background-color:#000;overflow: hidden}
+body,
+html {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #000;
+	user-select: none;
+}
+</style>
+</head>
+<body>
+		<canvas id="c"></canvas>
+		<script>
+			var c=document.getElementById("c");
+			var	ctx=c.getContext("2d");
+				c.width=window.innerWidth;
+				c.height=window.innerHeight;
+			var string1 = "嘉嘉嘉笳加佳迦家";
+				string1.split("");
+			var fontsize=20;
+				columns=c.width/(fontsize);
+			var drop = [];
+			for(var x=0;x<columns;x++)
+			{
+				drop[x]=0;
+			}
+		function drap(){
+			ctx.fillStyle="rgba(0,0,0,0.07)";
+			ctx.fillRect(0,0,c.width,c.height);
+			ctx.fillStyle="#0F0";
+			ctx.font=(fontsize-4)+"px arial";
+			for(var i=0;i<drop.length;i++){
+				var text1=string1[Math.floor(Math.random()*string1.length)];
+				ctx.fillText(text1,i*fontsize,drop[i]*fontsize);
+				drop[i]++;
+				if(drop[i]*fontsize>c.height&&Math.random()>0.9){//90%的几率掉落
+					drop[i]=0;
+				}
+			}
+		}
+		setInterval(drap,20);
+		function disableTouch(e){
+			e.e.preventDefault()
+		}
+		window.addEventListener('mousemove',disableTouch);
+		window.addEventListener('touchmove',disableTouch);
+		window.addEventListener('scroll',disableTouch);
+</script>
+</body>
+</html>

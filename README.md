@@ -18,19 +18,29 @@
 
 [Jia.sexy v0.3 - Gaa Everywhere](http://jia.sexy/v0.3.html)
 
-[Jia.sexy v0.4 - Rain Gaa & Jia](http://jia.sexy/index.html?v=0.4)
+[Jia.sexy v0.4 - Rain Gaa & Jia](http://jia.sexy/v0.4.html)
+
+[Jia.sexy v0.5 - Snow Gaa & Jia](http://jia.sexy/index.html?v=0.5)
 
 ## 嘉言嘉语
 
-* 嘉教
-* 大嘉
-* 嘉娃
-* C嘉嘉
-* 嘉欲关
-* 嘉学家
-* 爱嘉护家
-* 爱嘉之人
-* 渐入嘉境
-* 嘉期如梦
-* 嘉车难防
-* 是我独嘉的记忆
+* 人称代词
+  * 嘉教
+  * 大嘉
+* 编程语言
+  * 嘉娃
+  * 嘉娃Script
+  * C嘉嘉
+* 专有名词
+  * 嘉学家
+  * 爱嘉之人
+  * 精神嘉园
+* 衍生短语
+  * 大嘉好
+  * 嘉欲关
+  * 嘉好友  
+  * 爱嘉护家
+  * 渐入嘉境
+  * 嘉期如梦
+  * 嘉车难防
+  * 是我独嘉的记忆
