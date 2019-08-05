@@ -1,6 +1,6 @@
 # jia
 
-![badge](./v0.1/images/jia-badge.png)
+![badge](./badge/v0.2.png)
 
 ## 嘉股
 
@@ -20,7 +20,9 @@
 
 [Jia.sexy v0.4 - Rain Gaa & Jia](http://jia.sexy/v0.4.html)
 
-[Jia.sexy v0.5 - Snow Gaa & Jia](http://jia.sexy/index.html?v=0.5)
+[Jia.sexy v0.5 - Snow Gaa & Jia](http://jia.sexy/v0.5.html)
+
+[Jia.sexy v0.6 - Shining Gaa & Jia](http://jia.sexy/index.html?v=0.6)
 
 ## 嘉言嘉语
 
