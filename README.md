@@ -24,6 +24,10 @@
 
 [Jia.sexy v0.6 - Shining Gaa & Jia](http://jia.sexy/index.html?v=0.6)
 
+## 事迹嘉园
+
+* 2019-08-07 成立 jia inc. 🎉
+
 ## 嘉言嘉语
 
 * 人称代词
