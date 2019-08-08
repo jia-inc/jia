@@ -12,17 +12,19 @@
 
 ## 嘉园迭代
 
-[Jia.sexy v0.1 - Everything can be jiarified](http://jia.sexy/v0.1.html)
+[Jia.sexy v0.1 - Everything can be jiarified | 万物皆可嘉](http://jia.sexy/v0.1.html)
 
-[Jia.sexy v0.2 - Gaa system](http://jia.sexy/v0.2.html)
+[Jia.sexy v0.2 - Gaa system | 嘉园宇宙](http://jia.sexy/v0.2.html)
 
-[Jia.sexy v0.3 - Gaa Everywhere](http://jia.sexy/v0.3.html)
+[Jia.sexy v0.3 - Gaa Everywhere | 嘉之光影](http://jia.sexy/v0.3.html)
 
-[Jia.sexy v0.4 - Rain Gaa & Jia](http://jia.sexy/v0.4.html)
+[Jia.sexy v0.4 - Rain Gaa & Jia | 嘉中有雨](http://jia.sexy/v0.4.html)
 
-[Jia.sexy v0.5 - Snow Gaa & Jia](http://jia.sexy/v0.5.html)
+[Jia.sexy v0.5 - Snow Gaa & Jia | 嘉中有雪](http://jia.sexy/v0.5.html)
 
-[Jia.sexy v0.6 - Shining Gaa & Jia](http://jia.sexy/index.html?v=0.6)
+[Jia.sexy v0.6 - Shining Gaa & Jia | 嘉言嘉语](http://jia.sexy/v0.6.html)
+
+[Jia.sexy v0.7 - Hiding Gaa & Jia | 嘉在其中](http://jia.sexy/index.html?v=0.7)
 
 ## 嘉言嘉语
 
