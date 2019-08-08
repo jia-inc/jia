@@ -26,6 +26,10 @@
 
 [Jia.sexy v0.7 - Hiding Gaa & Jia | 嘉在其中](http://jia.sexy/index.html?v=0.7)
 
+## 事迹嘉园
+
+* 2019-08-07 成立 jia inc. 🎉
+
 ## 嘉言嘉语
 
 * 人称代词
@@ -35,6 +39,7 @@
   * 嘉娃
   * 嘉娃Script
   * C嘉嘉
+  * 吸嘉嘉
 * 专有名词
   * 嘉学
   * 嘉语
