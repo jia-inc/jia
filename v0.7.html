@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hiding Gaa & Jia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<style>
+html,body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	user-select: none;
+}
+html {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+}
+html, body {
+  background-color: black;
+  overflow: hidden;
+  user-select: none;
+  margin: 0;
+}
+canvas{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+canvas#Background{
+  position: absolute;
+  z-index: 1;
+}
+</style>
+</head>
+<body>
+  <canvas id="Background"></canvas>
+  <canvas id='Content'></canvas>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+(function(){
+  let doc = $(document), mX, mY, letter = []
+  let letters = "嘉嘉嘉嘉嘉嘉嘉嘉嘉嘉嘉嘉嘉嘉嘉ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!@#$%^&*~`/.,<>?\|]}{[".split("")
+  mR = (n, i) => Math.floor(Math.random() * n) + i
+
+  inject = () => { 
+    can = document.getElementById("Content")
+    con = can.getContext("2d")
+    init()
+  }
+
+  size = () => {
+    can.height = doc.height()
+    can.width = doc.width()
+  }
+
+  var $window = $(window);
+  $window.on("resize", () => { size() })
+
+  init = () => {
+    size()
+    think()
+  }
+
+  doc.on("mousemove", (e) => {
+    mX = e.pageX
+    mY = e.pageY
+    letter.push([mX-10+mR(20, 0), mY+mR(20,0), letters[mR(letters.length, 0)], mR(10, 8), 1, mR(16, 8), mR(20, 0)])
+  })
+
+  var full_w = $window.width();
+  var full_h = $window.height();
+  var x = 0;
+  var y = full_h*0.8;
+  var variable = 1;
+  function randomLetter(){
+    x+= mR(8,3)*variable;
+    if(x>full_w){ variable =-1 }
+    if(x<0){ variable =1 }
+    mX = x;
+    mY = full_h;
+    letter.push([mX-10+mR(20, 0), mY+mR(20,0), letters[mR(letters.length, 0)], mR(10, 8), 1, mR(8, 3), mR(20, 0)])
+    requestAnimationFrame( randomLetter )
+  }
+
+  randomLetter();
+  randomLetter();
+
+  dT = (x, y, t, s, c) => {
+    con.save()
+    con.font = ""+s+"px PingfangSC"
+    con.shadowColor = "rgba(0,0,0,"+c+")" 
+    con.shadowBlur = s/2
+    con.fillStyle = "rgba(0,204,255,"+c+")"
+    let tW = con.measureText(t).width
+    con.fillText(t, x-tW/2, y)
+    con.restore()
+  }
+
+  dR = (x, y, w, h, c) => {
+    con.save()
+    con.beginPath()
+    con.rect(x, y, w, h)
+    con.fillStyle = c
+    con.fill()
+    con.restore()
+  }
+
+  think = () => {
+    let sC = mR(2, 1)
+    for (let i = 0; i < letter.length; i++) {
+      sC == 2 ? letter ? letter[i][2] = letters[mR(letters.length, 0)]: null:null
+      letter ? letter[i][1]-= letter[i][5]: null
+      letter[i][4] >= 0 ? letter[i][4]-= 0.01: letter.splice(i, 1)
+    } 
+    animate()
+    window.requestAnimationFrame(think)
+  }
+
+  animate = () => {
+    con.clearRect(0, 0, can.width, can.height)
+    for (let i = 0; i < letter.length; i++) {
+      dT(letter[i][0], letter[i][1], letter[i][2], letter[i][3], letter[i][4])
+      let rH = mR(540, 10)
+      let sH = mR(rH, 1)
+    }
+    dT(can.width/2, can.height/2, "See, Gaa is here.", 28, 0.5)
+  }
+
+  doc.ready(() => inject())
+})();
+(function(){
+  let af;
+  const numLasers = 250;
+  const tail = 200;
+  const canvas = document.getElementById("Background");
+  const ctx = canvas.getContext("2d");
+  const createLasers = n => {
+    const lasers = [];
+    for (let i = 0; i < n; ++i) {
+      lasers.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        s: Math.random() * 2 + 1
+      });
+    }
+    return lasers;
+  };
+  const renderLaser = l => {
+    const grad = ctx.createLinearGradient(l.x, l.y, l.x, l.y + tail);
+    const a = (1 - (canvas.height - l.y) / canvas.height * 0.8)/2;
+    grad.addColorStop(0, `rgba(0,204,255,${a})`);
+    grad.addColorStop(1, "rgba(0,204,255,0)");
+    ctx.strokeStyle = grad;
+    ctx.beginPath();
+    ctx.moveTo(l.x, l.y);
+    ctx.lineTo(l.x, l.y + tail);
+    ctx.stroke();
+  };
+  const updateLaser = l => {
+    l.y -= l.s;
+    if (l.y < -tail) {
+      l.y = canvas.height;
+    }
+  };
+  const render = lasers => {
+    ctx.fillStyle = "hsl(261,43%,7%)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    for (let l of lasers) {
+      renderLaser(l);
+      updateLaser(l);
+    }
+    af = requestAnimationFrame(() => render(lasers));
+  };
+  const init = () => {
+    cancelAnimationFrame(af);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    render(createLasers(numLasers));
+  };
+  window.onresize = init;
+  init();
+
+})();
+</script>
+<script>
+function preventDefault(e) {
+    e.preventDefault();
+}
+document.addEventListener('touchmove', preventDefault, {passive: false});
+</script>
+</body>
+</html>

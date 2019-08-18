@@ -24,7 +24,9 @@
 
 [Jia.sexy v0.6 - Shining Gaa & Jia | 嘉言嘉语](http://jia.sexy/v0.6.html)
 
-[Jia.sexy v0.7 - Hiding Gaa & Jia | 嘉在其中](http://jia.sexy/index.html?v=0.7)
+[Jia.sexy v0.7 - Hiding Gaa & Jia | 嘉在其中](http://jia.sexy/v0.7.html)
+
+[Jia.sexy v0.8 - Write your Gaa | 信手嘉之](http://jia.sexy/index.html?v=0.8)
 
 ## 事迹嘉园
 
@@ -44,11 +46,14 @@
   * 嘉学
   * 嘉语
   * 嘉学家
+  * 一嘉手机
   * 爱嘉之人
   * 精神嘉园
   * 四库嘉书
 * 衍生短语
   * 嘉班
+  * 嘉仓
+  * 嘉杠杆
   * 大嘉好
   * 嘉欲关
   * 嘉好友  
