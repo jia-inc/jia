@@ -26,7 +26,9 @@
 
 [Jia.sexy v0.7 - Hiding Gaa & Jia | 嘉在其中](http://jia.sexy/v0.7.html)
 
-[Jia.sexy v0.8 - Write your Gaa | 信手嘉之](http://jia.sexy/index.html?v=0.8)
+[Jia.sexy v0.8 - Write your Gaa | 信手嘉之](http://jia.sexy/v0.8.html)
+
+[Jia.sexy v1.0 - With your Gaa | 与嘉同在](http://jia.sexy/v1.0.html?)
 
 ## 事迹嘉园
 
