@@ -419,7 +419,7 @@ class Hero {
     }
     // 701 - 800 且当日行动为买花时，额外+1 | 今天卖得只剩下一朵玫瑰，老板送给你了
     else if(rdm<800){
-      if( this.social>20 && this.done_sendingRose==='buy' ){
+      if( this.social>20 && this.last_behavior==='buy' ){
         happened = true;
         log("还剩下一朵玫瑰，老板就直接送给你了。");
         this.change_prop('rose',1);
@@ -427,7 +427,7 @@ class Hero {
     }
     // 801 - 900 且当日行动为学习时，额外+1 | 状态不错，感觉解决了几个大问题。
     else if(rdm<900){
-      if( this.social>20 && this.done_sendingRose==='study' ){
+      if( this.social>20 && this.last_behavior==='study' ){
         happened = true;
         log("状态不错，多解决了几个大问题。");
         this.change_prop('knowlege',1);
@@ -435,7 +435,7 @@ class Hero {
     }
     // 901 - 1000 且当日行动为打工时，额外现有+20% | 这次多赚了一些。
     else if(rdm<1000){
-      if( this.social>40 && this.done_sendingRose==='study' ){
+      if( this.social>40 && this.last_behavior==='study' ){
         happened = true;
         log("已经和你很熟悉了的客户，这次多给了你一些钱。");
         this.change_prop('money',this.money/5);
@@ -692,7 +692,7 @@ class Hero {
     if( !is_dead && this.gaa_withOthers>=120 ){
       is_dead = true;
       dead_msg = "可惜，她还是跟别人在一起了。";
-      if(this.done_sendingRose>99){
+      if(this.days_given>99){
         extra_msg.push("你还送了那么多玫瑰……舔狗舔到最后一无所有。")
       }
       if(this.money>100){
@@ -716,7 +716,7 @@ class Hero {
       dead_msg = ("最终，你还是选择了放手，并把嘉介绍给了富商之子，她过上了幸福的生活。");
     }
     
-    if( !is_dead && this.done_sendingRose>0 && this.money>=1500 ){
+    if( !is_dead && this.days_given>0 && this.money>=1500 ){
       is_dead = true;
       dead_msg = ("你不会真想靠打工变成大款吧？她发现你只知道赚钱之后，觉得你太拜金了。很遗憾，你没有第二次机会了。");
     }
