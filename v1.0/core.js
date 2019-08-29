@@ -31,6 +31,7 @@ const Utils = {
 class Hero {
   constructor(name,age) {
     age = parseInt(age);
+    name = name.toLowerCase();
     // config
     this.name = name;
     this.age = age;
@@ -82,8 +83,6 @@ class Hero {
 
     log("对她一见钟情之后的第一天，你会怎么做呢？")
 
-    name = name.toLowerCase()
-
     if(name===""){
       log("你都不配拥有姓名？")
       this.heart = -99;
@@ -93,6 +92,9 @@ class Hero {
     }else if(name==="randy"){
       log("软哥的能力是音乐健身");
       this.social = 20;
+    }else if(name==="yetone"){
+      log("有时爱情竟如此艰难");
+      this.gaa_withOthers = 119;
     }else if(name==="yufan"||name==="alvin"){
       log("该赚钱就赚钱去，到这里闹什么。");
       this.money = 9999;
@@ -341,6 +343,9 @@ class Hero {
   day_random(){
     var rdm = Utils.randomNum(0,1002);
     var happened = false;
+    if(rdm>800){
+      this.gaa_withOthers += Utils.randomNum(-3,6);
+    }
     // 0 好感度<10时，她突然向你表白了 触发结局0。
     if(rdm<1){
       if(this.gaa_feeling<=10){
@@ -352,13 +357,16 @@ class Hero {
     // 1 - 3 嘉发现，你是十二年前那场车祸中为了救她险些丧命的小哥哥，往事如泉水般翻涌。好感度在小于90时直接变成90，所有状态清除到 单身（上限1）；
     //     但是90以上-10：她要冷静审视和你这段感情，不想辜负于你
     else if(rdm<4){
-      happened = true;
-      log("嘉想起来了，你是十二年前那场车祸中为了救她险些丧命的小哥哥，往事如泉水般翻涌。")
-      if(this.gaa_feeling<90){
-        this.gaa_feeling = 90;
-      }else{
-        log("她要冷静审视和你这段感情，不想辜负于你。")
-        this.change_prop('gaa_feeling',-10);
+      if(this.age>21){
+
+        happened = true;
+        log("嘉想起来了，你是十二年前那场车祸中为了救她险些丧命的小哥哥，往事如泉水般翻涌。")
+        if(this.gaa_feeling<90){
+          this.gaa_feeling = 90;
+        }else{
+          log("她要冷静审视和你这段感情，不想辜负于你。")
+          this.change_prop('gaa_feeling',-10);
+        }
       }
     }
     // 4 - 60 且当然行动为送花，好感度翻倍。
@@ -457,9 +465,13 @@ class Hero {
       money: this.money,
       rose: this.rose,
       alive: this.alive,
-      gaa_feeling: this.gaa_feeling
+      gaa_feeling: this.gaa_feeling,
+      gaa_withOthers: this.gaa_withOthers
     };
-    console.log(data)
+    if(this.name==="egoist"||this.name==="koyuki"){
+      data.is_egoist = true;
+    }
+    console.log(this.gaa_withOthers)
     return data
   }
 

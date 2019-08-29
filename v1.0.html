@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>[BETA] With your Gaa</title>
+<title>[BETA-1.1] With your Gaa</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
 <link href="https://cdn.bootcss.com/element-ui/2.11.1/theme-chalk/index.css" rel="stylesheet">
@@ -48,13 +48,16 @@
     text-align: left;
     font-size: 14px;
   }
+  .el-message-box{
+    width: 220px;
+  }
 </style>
 </head>
 <body>
 
 <div id="app" v-cloak>
   <el-container>
-    <el-header>[BETA] With your Gaa</el-header>
+    <el-header>[BETA-1.1] With your Gaa</el-header>
     <el-main>
       <el-container>
         <el-header>
@@ -80,11 +83,11 @@
             <el-button size="small" @click="do_something('give')" plain>献花</el-button>
             <el-button v-if="values.rose>=999" size="small" type="primary" @click="do_something('give999')" plain>献花束</el-button>
             <el-button size="small" @click="do_something('buy')" plain>买花</el-button>
-            <el-button size="small" @click="do_something('god')" plain>拜佛</el-button>
+            <el-button size="small" @click="do_something('god')" plain>拜月老</el-button>
             <el-button size="small" @click="do_something('social')" plain>社交</el-button>
             <el-button size="small" @click="do_something('learn')" plain>学习</el-button>
             <el-button size="small" @click="do_something('sleep')" plain>休息</el-button>
-            <el-button size="small" @click="do_something('abandon')" plain>放弃游戏</el-button>
+            <el-button size="small" @click="do_something('abandon')" plain>{{ values.is_egoist ? "选择打手冲" : "放弃游戏" }}</el-button>
           </div>
           <div style="margin: 20px 0" v-show="!values.alive">
             <el-button size="small" type="primary" @click="init(1)" plain>重新开始</el-button>
@@ -101,7 +104,7 @@
 <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
 <script src="https://cdn.bootcss.com/element-ui/2.11.1/index.js"></script>
 <script src="https://cdn.bootcss.com/element-ui/2.11.1/locale/zh-CN.min.js"></script>
-<script src="v1.0/core.js"></script>
+<script src="v1.0/core.js?v=1.1"></script>
 <script>
   Vue.devtools = true;
 (function(){
@@ -141,7 +144,7 @@
           inputPattern: /^[a-zA-Z0-9]*$/,
           inputErrorMessage: '姓名输入不正确'
         }).then(({ value })=>{
-          let username = value;
+          let username = value ? value : "";
           this.$prompt('请输入初始年龄，只支持正整数', '设置角色', {
             confirmButtonText: '确定',
             cancelButtonText: '取消',
