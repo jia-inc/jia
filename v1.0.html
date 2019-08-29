@@ -7,6 +7,9 @@
 <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
 <link href="https://cdn.bootcss.com/element-ui/2.11.1/theme-chalk/index.css" rel="stylesheet">
 <style>
+  *{
+    font-family: sans-serif;
+  }
   .el-header, .el-footer {
     background-color: #B3C0D1;
     color: #333;
@@ -57,7 +60,7 @@
     font-size: 14px;
   }
   .el-message-box{
-    width: 220px;
+    width: 300px;
   }
 </style>
 </head>
@@ -130,7 +133,20 @@
       userage: 0
     },
     created(){
-      this.open_dialog()
+      this.$alert(
+          `第一支玫瑰花可能会花光你所有积蓄……<br/>
+          第一次求神一定要准备至少3位数的钱……<br/>
+          除了你，还有其他人在追求她，你要稳扎稳打……<br/>
+          你很多年前曾经为了救她险些丧命，可是看起来她忘了这一切……<br/>
+          在爱情中，时机是很珍贵的……<br/>
+          另外，不作死就不会死。`
+        , '务必仔细阅读', {
+        confirmButtonText: '准备好了',
+        dangerouslyUseHTMLString: true,
+        callback: action => {
+          this.open_dialog()
+        }
+      });
     },
     methods: {
       init(restart){

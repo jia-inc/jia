@@ -361,6 +361,7 @@ class Hero {
 
         happened = true;
         log("嘉想起来了，你是十二年前那场车祸中为了救她险些丧命的小哥哥，往事如泉水般翻涌。")
+        this.change_prop('gaa_withOthers',-0.8,true);
         if(this.gaa_feeling<90){
           this.gaa_feeling = 90;
         }else{
@@ -381,6 +382,7 @@ class Hero {
     else if(rdm<100){
       if( this.gaa_feeling<10 ){
         happened = true;
+        this.change_prop('gaa_withOthers',-0.08,true);
         log("命运还是强行让你们邂逅了。");
         this.gaa_feeling += 10;
       }
@@ -513,12 +515,14 @@ class Hero {
         if(this.gaa_feeling>=60){
           if(Math.random()>this.gaa_feeling/100){
             this.change_prop('gaa_feeling',this.gaa_feeling/15+1);
+            this.change_prop('gaa_withOthers',-0.03,true);
             log("今天她很开心。")
           }else{
             log("送花并不总是有效的，有时也要看玄学。")
           }
         }else{
           this.change_prop('gaa_feeling',this.gaa_feeling/10+1)
+          this.change_prop('gaa_withOthers',-0.05,true);
           log("献花一支，对你的好感度又上升了。")
         }
         break;
