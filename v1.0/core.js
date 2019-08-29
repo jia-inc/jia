@@ -343,8 +343,8 @@ class Hero {
   day_random(){
     var rdm = Utils.randomNum(0,1002);
     var happened = false;
-    if(rdm>800){
-      this.gaa_withOthers += Utils.randomNum(-3,6);
+    if(rdm>800 && ~['work','buy','social','learn','sleep'].indexOf(this.last_behavior )){
+      this.gaa_withOthers += Utils.randomNum(-3,5);
     }
     // 0 好感度<10时，她突然向你表白了 触发结局0。
     if(rdm<1){
@@ -637,6 +637,11 @@ class Hero {
       case 'sleep':
         this.last_behavior = 'sleep';
         this.done_havent +=1;
+        this.days_sleep += 1;
+        if(this.name==='egoist'||this.name==="koyuki"){
+          this.heart -= 10;
+          break;
+        }
         success = 1;
         if(Math.random()>=(this.gaa_feeling/100)){
           log("٩( 'ω' )و休息一天，恢复一点。")
@@ -645,7 +650,6 @@ class Hero {
           log("Σ(⊙▽⊙''' 做噩梦吓醒了，没有休息好。最近压力确实太大了。")
           this.heart += Utils.randomNum(2,6);
         }
-        this.days_sleep += 1;
         break;
       // 就这样吧 让她一个人好好生活。 触发游戏结束
       case 'abandon':
@@ -725,7 +729,9 @@ class Hero {
     
     if( !is_dead && this.social>=100 ){
       is_dead = true;
-      dead_msg = ("最终，你还是选择了放手，并把嘉介绍给了富商之子，她过上了幸福的生活。");
+      extra_msg.push("在江湖人海中，你看遍了人间，发现，你不过是沧海一粟。")
+      extra_msg.push("适合她的人那么多，你只是当中，最没有实力让她幸福的一个。")
+      dead_msg = ("最终，你还是选择了放手，并把嘉介绍给了富商之子，如你所愿，她过上了幸福的生活。");
     }
     
     if( !is_dead && this.days_given>0 && this.money>=1500 ){

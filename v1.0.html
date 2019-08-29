@@ -86,8 +86,8 @@
             <el-button size="small" @click="do_something('god')" plain>拜月老</el-button>
             <el-button size="small" @click="do_something('social')" plain>社交</el-button>
             <el-button size="small" @click="do_something('learn')" plain>学习</el-button>
-            <el-button size="small" @click="do_something('sleep')" plain>休息</el-button>
-            <el-button size="small" @click="do_something('abandon')" plain>{{ values.is_egoist ? "选择打手冲" : "放弃游戏" }}</el-button>
+            <el-button size="small" @click="do_something('sleep')" plain>{{ values.is_egoist ? "选择打手冲" : "休息" }}</el-button>
+            <el-button size="small" @click="do_something('abandon')" plain>放弃游戏</el-button>
           </div>
           <div style="margin: 20px 0" v-show="!values.alive">
             <el-button size="small" type="primary" @click="init(1)" plain>重新开始</el-button>
@@ -104,7 +104,7 @@
 <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
 <script src="https://cdn.bootcss.com/element-ui/2.11.1/index.js"></script>
 <script src="https://cdn.bootcss.com/element-ui/2.11.1/locale/zh-CN.min.js"></script>
-<script src="v1.0/core.js?v=1.1"></script>
+<script src="v1.0/core.js?v=0.2"></script>
 <script>
   Vue.devtools = true;
 (function(){
@@ -138,6 +138,17 @@
       },
       open_dialog(){
         let name,age;
+        var username = prompt('请输入玩家姓名，只支持字母数字');
+        if(!username){ username = "" }
+        if(!/^[a-zA-Z0-9]*$/.test(username)){ this.open_dialog();return }
+        var userage = prompt('请输入初始年龄，只支持正整数');
+        if(userage===''||isNaN(userage)||userage===null){
+          window.__log.push('填写得不对，那系统就默认你年龄为22吧。')
+        }
+        this.username = username;
+        this.userage = parseInt(userage);
+        this.init();
+        return
         this.$prompt('请输入玩家姓名，只支持字母数字', '创建角色', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
