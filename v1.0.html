@@ -13,8 +13,9 @@
     text-align: center;
     line-height: 60px;
   }
+  /* .el-container{ flex:1;} */
   .el-main > div{
-    height: 100%;
+    flex:1;
     position: relative;
   }
   .el-main {
@@ -23,6 +24,7 @@
     text-align: center;
     line-height: 160px;
     padding: 0;
+    display: flex;
   }
   [v-cloak] { display: none }
   html,body,#app,.el-container{
@@ -33,7 +35,7 @@
   }
   .dialog{
     position: relative;
-    height: 100%;
+    /* height: 100%; */
     overflow: hidden;
   }
   .dialog-content{
@@ -66,7 +68,7 @@
     <el-header>[BETA-1.1] With your Gaa</el-header>
     <el-main>
       <div>
-
+      
         <el-container>
           <el-header>
             <el-breadcrumb class="tags">
