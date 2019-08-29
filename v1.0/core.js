@@ -801,7 +801,7 @@ class Hero {
   }
   change_prop(prop_type,difference,is_percent){
     if(
-      !~['heart','knowlege','social','money','rose','gaa_feeling']
+      !~['heart','knowlege','social','money','rose','gaa_feeling','gaa_withOthers']
         .indexOf(prop_type)
     ){
       return false
