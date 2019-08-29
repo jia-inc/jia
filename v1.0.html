@@ -13,11 +13,16 @@
     text-align: center;
     line-height: 60px;
   }
+  .el-main > div{
+    height: 100%;
+    position: relative;
+  }
   .el-main {
     background-color: #E9EEF3;
     color: #333;
     text-align: center;
     line-height: 160px;
+    padding: 0;
   }
   [v-cloak] { display: none }
   html,body,#app,.el-container{
@@ -33,7 +38,8 @@
   }
   .dialog-content{
     position: absolute;
-    width: 100%;
+    width: 90%;
+    left: 5%;
     bottom: 0;
     transition: all .4s;
   }
@@ -59,41 +65,44 @@
   <el-container>
     <el-header>[BETA-1.1] With your Gaa</el-header>
     <el-main>
-      <el-container>
-        <el-header>
-          <el-breadcrumb class="tags">
-            <el-breadcrumb-item>生命:{{values.heart}}</el-breadcrumb-item>
-            <el-breadcrumb-item>知识:{{values.knowlege}}</el-breadcrumb-item>
-            <el-breadcrumb-item>人际:{{values.social}}</el-breadcrumb-item>
-            <el-breadcrumb-item>金钱:{{values.money}}</el-breadcrumb-item>
-            <el-breadcrumb-item>玫瑰:{{values.rose}}</el-breadcrumb-item>
-            <el-breadcrumb-item>攻略度:{{values.gaa_feeling}}</el-breadcrumb-item>
-          </el-breadcrumb>
-        </el-header>
-        <el-main>
-          <div class="dialog">
-            <div class="dialog-content">
-              <p v-for="(text,index) in logs" :key="index">{{text}}</p>
+      <div>
+
+        <el-container>
+          <el-header>
+            <el-breadcrumb class="tags">
+              <el-breadcrumb-item>生命:{{values.heart}}</el-breadcrumb-item>
+              <el-breadcrumb-item>知识:{{values.knowlege}}</el-breadcrumb-item>
+              <el-breadcrumb-item>人际:{{values.social}}</el-breadcrumb-item>
+              <el-breadcrumb-item>金钱:{{values.money}}</el-breadcrumb-item>
+              <el-breadcrumb-item>玫瑰:{{values.rose}}</el-breadcrumb-item>
+              <el-breadcrumb-item>攻略度:{{values.gaa_feeling}}</el-breadcrumb-item>
+            </el-breadcrumb>
+          </el-header>
+          <el-main>
+            <div class="dialog">
+              <div class="dialog-content">
+                <p v-for="(text,index) in logs" :key="index">{{text}}</p>
+              </div>
             </div>
-          </div>
-        </el-main>
-        <el-footer style="height:180px;line-height: 48px;">
-          <div style="margin: 20px 0" v-show="values.alive">
-            <el-button size="small" @click="do_something('work')" plain>工作</el-button>
-            <el-button size="small" @click="do_something('give')" plain>献花</el-button>
-            <el-button v-if="values.rose>=999" size="small" type="primary" @click="do_something('give999')" plain>献花束</el-button>
-            <el-button size="small" @click="do_something('buy')" plain>买花</el-button>
-            <el-button size="small" @click="do_something('god')" plain>拜月老</el-button>
-            <el-button size="small" @click="do_something('social')" plain>社交</el-button>
-            <el-button size="small" @click="do_something('learn')" plain>学习</el-button>
-            <el-button size="small" @click="do_something('sleep')" plain>{{ values.is_egoist ? "选择打手冲" : "休息" }}</el-button>
-            <el-button size="small" @click="do_something('abandon')" plain>放弃游戏</el-button>
-          </div>
-          <div style="margin: 20px 0" v-show="!values.alive">
-            <el-button size="small" type="primary" @click="init(1)" plain>重新开始</el-button>
-          </div>
-        </el-footer>
-      </el-container>
+          </el-main>
+          <el-footer style="height:180px;line-height: 48px;">
+            <div style="margin: 20px 0" v-show="values.alive">
+              <el-button size="small" @click="do_something('work')" plain>工作</el-button>
+              <el-button size="small" @click="do_something('give')" plain>献花</el-button>
+              <el-button v-if="values.rose>=999" size="small" type="primary" @click="do_something('give999')" plain>献花束</el-button>
+              <el-button size="small" @click="do_something('buy')" plain>买花</el-button>
+              <el-button size="small" @click="do_something('god')" plain>拜月老</el-button>
+              <el-button size="small" @click="do_something('social')" plain>社交</el-button>
+              <el-button size="small" @click="do_something('learn')" plain>学习</el-button>
+              <el-button size="small" @click="do_something('sleep')" plain>{{ values.is_egoist ? "选择打手冲" : "休息" }}</el-button>
+              <el-button size="small" @click="do_something('abandon')" plain>放弃游戏</el-button>
+            </div>
+            <div style="margin: 20px 0" v-show="!values.alive">
+              <el-button size="small" type="primary" @click="init(1)" plain>重新开始</el-button>
+            </div>
+          </el-footer>
+        </el-container>
+      </div>
     </el-main>
     <el-footer>Made with 🐶 by <a href="https://inulab.cn">Nocti</a></el-footer>
   </el-container>
